@@ -48,27 +48,9 @@
         publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM"
         // client-reference-id=""
         // customer-email=""
-        customer-session-client-secret="">
+        customer-session-client-secret="cuss_secret_QEZDRmWIsO3udtfCA0AxocUKEYYuksX6MfnizOWcJFXdW1r">
     </stripe-pricing-table>
 
-    <script>
-        // Function to get URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        // Get the URL parameters
-        // var clientReferenceId = getUrlParameter('client-reference-id');
-        // var customerEmail = getUrlParameter('customer-email');
-        var customerSessionClientSecret = getUrlParameter('customer-session-client-secret');
-
-        // Set the attributes in the stripe-pricing-table element
-        // document.getElementById('pricing-table').setAttribute('client-reference-id', clientReferenceId);
-        // document.getElementById('pricing-table').setAttribute('customer-email', customerEmail);
-        document.getElementById('pricing-table').setAttribute('customer-session-client-secret', customerSessionClientSecret);
-    </script>
+    
 </body>
 </html>
