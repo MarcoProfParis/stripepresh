@@ -51,9 +51,9 @@
     }
 
     // Get CLIENT_REFERENCE_ID from URL
-    const clientReferenceId = getQueryParameter('CLIENT_REFERENCE_ID');
+    const clientReferenceId = getQueryParameter('client_reference_id');
 
-    // Check if CLIENT_REFERENCE_ID is present
+    // Check if client_reference_id is present
     if (clientReferenceId) {
       // Create the stripe-pricing-table element with the CLIENT_REFERENCE_ID
       const pricingTable = document.createElement('stripe-pricing-table');
