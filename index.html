@@ -41,37 +41,34 @@
         background-position: top;
         background-color:#171717">
   
-  <!-- Paste your embed code script here. -->
-  <script
-    async
-    src="https://js.stripe.com/v3/pricing-table.js">
-  </script>
-  <script>
-    // Function to get URL parameters
-    function getUrlParameter(name) {
-      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-      var results = regex.exec(location.search);
-      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    }
+<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table
+        id="pricing-table"
+        pricing-table-id="prctbl_1PO538BAzBHSrB6pzhcThX6k"
+        publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM"
+        client-reference-id=""
+        customer-email=""
+        customer-session-client-secret="">
+    </stripe-pricing-table>
 
-    // Extract the parameters from the URL
-    var clientReferenceId = getUrlParameter('client-reference-id');
-    var customerEmail = getUrlParameter('customer-email');
-    var customersessionclientsecret = getUrlParameter('customer-session-client-secret');
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
 
-    // Wait for the document to load
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set the attributes of the stripe-pricing-table element
-      var pricingTable = document.querySelector('stripe-pricing-table');
-      pricingTable.setAttribute('client-reference-id', clientReferenceId);
-      pricingTable.setAttribute('customer-email', customerEmail);
-      pricingTable.setAttribute('customer-session-client-secret',customersessionclientsecret);
-    });
-  </script>
-  <stripe-pricing-table
-    pricing-table-id="prctbl_1PO538BAzBHSrB6pzhcThX6k"
-    publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM">
-  </stripe-pricing-table>
+        // Get the URL parameters
+        var clientReferenceId = getUrlParameter('client-reference-id');
+        var customerEmail = getUrlParameter('customer-email');
+        var customerSessionClientSecret = getUrlParameter('customer-session-client-secret');
+
+        // Set the attributes in the stripe-pricing-table element
+        document.getElementById('pricing-table').setAttribute('client-reference-id', clientReferenceId);
+        document.getElementById('pricing-table').setAttribute('customer-email', customerEmail);
+        document.getElementById('pricing-table').setAttribute('customer-session-client-secret', customerSessionClientSecret);
+    </script>
 </body>
 </html>
