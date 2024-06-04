@@ -58,6 +58,7 @@
     // Extract the parameters from the URL
     var clientReferenceId = getUrlParameter('client-reference-id');
     var customerEmail = getUrlParameter('customer-email');
+    var customersessionclientsecret = getUrlParameter('customer-session-client-secret');
 
     // Wait for the document to load
     document.addEventListener('DOMContentLoaded', function() {
@@ -65,6 +66,7 @@
       var pricingTable = document.querySelector('stripe-pricing-table');
       pricingTable.setAttribute('client-reference-id', clientReferenceId);
       pricingTable.setAttribute('customer-email', customerEmail);
+      pricingTable.setAttribute('customer-session-client-secret',customersessionclientsecret);
     });
   </script>
   <stripe-pricing-table
