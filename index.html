@@ -46,8 +46,8 @@
         id="pricing-table"
         pricing-table-id="prctbl_1PO538BAzBHSrB6pzhcThX6k"
         publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM"
-        client-reference-id=""
-        customer-email=""
+        // client-reference-id=""
+        // customer-email=""
         customer-session-client-secret="">
     </stripe-pricing-table>
 
@@ -61,13 +61,13 @@
         }
 
         // Get the URL parameters
-        var clientReferenceId = getUrlParameter('client-reference-id');
-        var customerEmail = getUrlParameter('customer-email');
+        // var clientReferenceId = getUrlParameter('client-reference-id');
+        // var customerEmail = getUrlParameter('customer-email');
         var customerSessionClientSecret = getUrlParameter('customer-session-client-secret');
 
         // Set the attributes in the stripe-pricing-table element
-        document.getElementById('pricing-table').setAttribute('client-reference-id', clientReferenceId);
-        document.getElementById('pricing-table').setAttribute('customer-email', customerEmail);
+        // document.getElementById('pricing-table').setAttribute('client-reference-id', clientReferenceId);
+        // document.getElementById('pricing-table').setAttribute('customer-email', customerEmail);
         document.getElementById('pricing-table').setAttribute('customer-session-client-secret', customerSessionClientSecret);
     </script>
 </body>
