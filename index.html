@@ -41,31 +41,30 @@
     async
     src="https://js.stripe.com/v3/pricing-table.js">
   </script>
-  <div id="pricing-table-container"></div>
-
   <script>
-    // Function to get query parameter by name
-    function getQueryParameter(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
-    // Get CLIENT_REFERENCE_ID from URL
-    const clientReferenceId = getQueryParameter('client_reference_id');
+    // Extract the parameters from the URL
+    var clientReferenceId = getUrlParameter('client-reference-id');
+    var customerEmail = getUrlParameter('customer-email');
 
-    // Check if client_reference_id is present
-    if (clientReferenceId) {
-      // Create the stripe-pricing-table element with the CLIENT_REFERENCE_ID
-      const pricingTable = document.createElement('stripe-pricing-table');
-      pricingTable.setAttribute('pricing-table-id', 'prctbl_1PO538BAzBHSrB6pzhcThX6k');
-      pricingTable.setAttribute('publishable-key', 'pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM');
+    // Wait for the document to load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set the attributes of the stripe-pricing-table element
+      var pricingTable = document.querySelector('stripe-pricing-table');
       pricingTable.setAttribute('client-reference-id', clientReferenceId);
-
-      // Append the stripe-pricing-table element to the container
-      document.getElementById('pricing-table-container').appendChild(pricingTable);
-    } else {
-      console.error('CLIENT_REFERENCE_ID is missing in the URL');
-    }
+      pricingTable.setAttribute('customer-email', customerEmail);
+    });
   </script>
+  <stripe-pricing-table
+    pricing-table-id="prctbl_1PO538BAzBHSrB6pzhcThX6k"
+    publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM">
+  </stripe-pricing-table>
 </body>
 </html>
