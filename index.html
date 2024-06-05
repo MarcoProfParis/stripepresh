@@ -4,44 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stripe Pricing Table</title>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/Nrd109Fl7aW6jd1b8yr5/pub/vGVxjntryjlv5FGTg5g0.jpg'); /* Replace 'background-image.jpg' with the URL or path to your image */
-        background-size: cover;
-        background-position: top;
-        background-color:#171717
-    }
-.container {
-        background: #cff0f999; /* Background color */
-        margin: 50px auto;
-        padding: 20px; /* Add some padding for better appearance */
-        border-radius: 10px; /* Add rounded corners for better appearance */
-        max-width: 50%; /* Limit the width of the container */
-    }
-    .button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    .button:hover {
-        background-color: #45a049;
-    }
-  </style>
-</head>
-<body style="font-family: Arial, sans-serif;
-        text-align: center;
-        background-image: url('https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/Nrd109Fl7aW6jd1b8yr5/pub/vGVxjntryjlv5FGTg5g0.jpg'); /* Replace 'background-image.jpg' with the URL or path to your image */
-        background-size: cover;
-        background-position: top;
-        background-color:#171717">
   
-<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+</head>
+<body >
+<script async src="stripe.js"></script>
+  
+// https://js.stripe.com/v3/pricing-table.js
+  
     <stripe-pricing-table
         data-testid="pricing-table" 
         pricing-table-id="prctbl_1POLG6BAzBHSrB6peLFOMbF7"
