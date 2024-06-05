@@ -260,16 +260,17 @@
                 w(window, "message", this.postMessageListener, !1)
             }
         }, {
-            key: "attachShadowDom",
-            value: function() {
-                var container = document.createElement('div');
-                container.classList.add('stripe');
-                container.appendChild(this.frame);
-                this.attachShadow({
-                    mode: "open"
-                }).appendChild(container)
-            }
-        }, {
+    key: "attachShadowDom",
+    value: function() {
+        var container = document.createElement('div');
+        container.style.background = "#1F1F1F";
+        container.style.margin = "0";
+        container.appendChild(this.frame);
+        this.attachShadow({
+            mode: "open"
+        }).appendChild(container);
+    }
+}, {
             key: "reInitializeIframeFunc",
             value: function() {
                 this.messageIframe({
