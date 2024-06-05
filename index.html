@@ -13,10 +13,8 @@
   
     <stripe-pricing-table
         data-testid="pricing-table" 
-        pricing-table-id="prctbl_1POOdiBAzBHSrB6p9MtOve5u"
+        pricing-table-id=""
         publishable-key="pk_test_51O5y7PBAzBHSrB6pee5DcrwlMHQDnTsaJPrVuoM1K257C0AdFERoFAlYivoi0oGTj8LPq8P76YHXhMroJRzTJdSE00weq8Y9bM"
-        //client-reference-id=""
-        //customer-email=""
         customer-session-client-secret=""></div>
     </stripe-pricing-table>
 <script>
@@ -32,11 +30,12 @@
         // var clientReferenceId = getUrlParameter('client-reference-id');
         // var customerEmail = getUrlParameter('customer-email');
         var customerSessionClientSecret = getUrlParameter('customersessionclientsecret');
-
+        var pricingTableId = getUrlParameter('pricingTableId');
         // Set the attributes in the stripe-pricing-table element
         //document.querySelector('[data-testid="pricing-table"]').setAttribute('client-reference-id', clientReferenceId);
         //document.querySelector('[data-testid="pricing-table"]').setAttribute('customer-email', customerEmail);
         document.querySelector('[data-testid="pricing-table"]').setAttribute('customer-session-client-secret', customerSessionClientSecret);
+          document.querySelector('[data-testid="pricing-table"]').setAttribute('pricing-table-id', pricingTableId);
     </script>
     
 </body>
