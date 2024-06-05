@@ -263,8 +263,8 @@
     key: "attachShadowDom",
     value: function() {
         var container = document.createElement('div');
-        container.style.background = "#1F1F1F";
-        container.style.margin = "0";
+       
+        container.style.margin = "-8px";
         container.appendChild(this.frame);
         this.attachShadow({
             mode: "open"
